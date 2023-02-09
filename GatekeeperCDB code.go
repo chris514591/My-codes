@@ -8,17 +8,17 @@ import (
 //V2
 
 func main() {
-	fmt.Println("Welkom bij Fonteyn vakantieparken!!!")
+	fmt.Println("Welcome to Fonteyn Holidayparks")
 	currentTime := time.Now()
 	hour := currentTime.Hour()
 
 	if hour >= 7 && hour < 12 {
-		fmt.Println("Goedemorgen!")
+		fmt.Println("Goodmorning!")
 	} else if hour >= 12 && hour < 18 {
-		fmt.Println("Goedemiddag!")
+		fmt.Println("Good afternoon!")
 	} else if hour >= 18 && hour < 23 {
-		fmt.Println("Goedenavond!")
+		fmt.Println("Good evening!")
 	} else if hour >= 23 && hour < 7 {
-		fmt.Println("Sorry, de parkeerplaats is 's nachts gesloten!")
+		fmt.Println("The parking lot is closed. Sorry for the inconvenience.")
 	}
 }
