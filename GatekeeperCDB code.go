@@ -27,20 +27,29 @@ func welcomeOrNot() {
 }
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	// Prepare to read terminal
 
 	fmt.Println("Welcome to Fonteyn Holidayparks!")
 	fmt.Println("Please input your license plate number to gain access to the parking lot.")
 
-	scanner.Scan()
-	text := scanner.Text()
-	// Scan input and save in "text"
+	for tries := 0; tries < 5; tries++ {
+		// Loop so you have 5 tries
 
-	if text == "test" {
-		welcomeOrNot()
-		// Use function if input matches license plate number
-	} else {
-		fmt.Println("License plate number not found, try again.")
+		scanner2 := bufio.NewScanner(os.Stdin)
+		scanner2.Scan()
+		text := scanner2.Text()
+		// Used to scan and use input from terminal
+
+		if text == "test" {
+			welcomeOrNot()
+			// Use function if input matches license plate number
+		} else {
+			if tries < 4 {
+				fmt.Println("License plate number not found, try again.")
+				// With this statement you won't get "License plate... try again"
+			}
+		}
+		if tries == 4 {
+			fmt.Println("Out of tries. Try again later")
+		}
 	}
 }
