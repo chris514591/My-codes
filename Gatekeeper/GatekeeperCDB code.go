@@ -34,12 +34,12 @@ func main() {
 	for tries := 0; tries < 5; tries++ {
 		// Loop so you have 5 tries
 
-		scanner2 := bufio.NewScanner(os.Stdin)
-		scanner2.Scan()
-		text := scanner2.Text()
+		textScanner := bufio.NewScanner(os.Stdin)
+		textScanner.Scan()
+		licensePlateNumber := textScanner.Text()
 		// Used to scan and use input from terminal
 
-		if text == "test" {
+		if licensePlateNumber == "test" {
 			welcomeOrNot()
 			// Use function if input matches license plate number
 
