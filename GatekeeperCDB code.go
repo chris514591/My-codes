@@ -42,6 +42,7 @@ func main() {
 		if text == "test" {
 			welcomeOrNot()
 			// Use function if input matches license plate number
+
 		} else {
 			if tries < 4 {
 				fmt.Println("License plate number not found, try again.")
