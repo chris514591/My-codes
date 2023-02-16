@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"os"
 	"time"
@@ -27,20 +26,14 @@ func welcomeOrNot() {
 }
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	// Prepare to read terminal
+	licensePlateNumber := os.Args[1]
+	// Used to insert input right after calling .exe
 
 	fmt.Println("Welcome to Fonteyn Holidayparks!")
 	fmt.Println("Please input your license plate number to gain access to the parking lot.")
 
-	scanner.Scan()
-	text := scanner.Text()
-	// Scan input and save in "text"
-
-	if text == "test" {
+	if licensePlateNumber == "test" {
 		welcomeOrNot()
 		// Use function if input matches license plate number
-	} else {
-		fmt.Println("License plate number not found, try again.")
 	}
 }
