@@ -51,6 +51,7 @@ func main() {
 		}
 		if tries == 4 {
 			fmt.Println("Out of tries. Try again later")
+			// ADD STOP WHEN CORRECT ANSWER
 		}
 	}
 }
