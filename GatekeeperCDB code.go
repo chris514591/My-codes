@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"strings"
 	"time"
 )
 
@@ -25,16 +24,16 @@ func welcomeOrNot() {
 }
 
 func main() {
-	reader := bufio.NewReader(os.Stdin)
+	scanner := bufio.NewScanner(os.Stdin)
 
 	fmt.Println("Welcome to Fonteyn Holidayparks!")
 	fmt.Println("Please input your license plate number to gain access to the parking lot.")
 
-	text, _ := reader.ReadString('\n')
+	scanner.Scan()
 	// convert CRLF to LF
-	text = strings.Replace(text, "\n", "", -1)
+	text := scanner.Text()
 
-	if strings.Compare("test", text) == 0 {
+	if text == "test" {
 		welcomeOrNot()
 	} else {
 		fmt.Println("License plate number not found, try again.")
