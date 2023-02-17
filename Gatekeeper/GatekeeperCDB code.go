@@ -42,6 +42,8 @@ func main() {
 		if licensePlateNumber == "test" {
 			welcomeOrNot()
 			// Use function if input matches license plate number
+			break
+			// Stop code when input license plate is valid
 
 		} else {
 			if tries < 4 {
