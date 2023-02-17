@@ -44,7 +44,6 @@ func main() {
 			// Use function if input matches license plate number
 			break
 			// Stop code when input license plate is valid
-
 		} else {
 			if tries < 4 {
 				fmt.Println("License plate number not found, try again.")
@@ -53,7 +52,6 @@ func main() {
 		}
 		if tries == 4 {
 			fmt.Println("Out of tries. Try again later")
-			// ADD STOP WHEN CORRECT ANSWER
 		}
 	}
 }
