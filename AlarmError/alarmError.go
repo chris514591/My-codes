@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 )
@@ -21,7 +20,7 @@ func main() {
 	log.SetOutput(logFile1)
 	log.Println("Alarm error program initiated.")
 
-	jsonContent, err2 := ioutil.ReadFile("./alarmConfig.json")
+	jsonContent, err2 := os.ReadFile("./alarmConfig.json")
 	if err2 != nil {
 		log.Fatal(err2)
 		log.SetOutput(logFile1)
