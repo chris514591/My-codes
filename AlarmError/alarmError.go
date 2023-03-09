@@ -1,28 +1,17 @@
-// main.go
 package main
 
 import (
-	"encoding/json"
-	"io/ioutil"
 	"log"
+	"os"
 )
 
 func main() {
-	// Let's first read the `config.json` file
-	content, err := ioutil.ReadFile("./config.json")
+	file, err := os.OpenFile("alarmErrorLogs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
 	if err != nil {
-		log.Fatal("Error when opening file: ", err)
+		log.Fatal(err)
 	}
 
-	// Now let's unmarshall the data into `payload`
-	var payload map[string]interface{}
-	err = json.Unmarshal(content, &payload)
-	if err != nil {
-		log.Fatal("Error during Unmarshal(): ", err)
-	}
+	log.SetOutput(file)
 
-	// Let's print the unmarshalled data!
-	log.Printf("origin: %s\n", payload["origin"])
-	log.Printf("user: %s\n", payload["user"])
-	log.Printf("status: %t\n", payload["active"])
+	log.Println("Error 1")
 }
