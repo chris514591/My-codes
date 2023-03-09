@@ -1,17 +1,34 @@
 package main
 
 import (
+	"fmt"
+	"io/ioutil"
 	"log"
 	"os"
 )
 
+type Data struct {
+	Low    int64
+	Medium int64
+	High   int64
+}
+
 func main() {
-	file, err := os.OpenFile("alarmErrorLogs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
-	if err != nil {
-		log.Fatal(err)
+	logFile1, err2 := os.OpenFile("alarmErrorLogs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+	if err2 != nil {
+		log.Fatal(err2)
 	}
 
-	log.SetOutput(file)
+	log.SetOutput(logFile1)
 
-	log.Println("Error 1")
+	log.Println("Alarm error program initiated.")
+
+	jsonContent, err1 := ioutil.ReadFile("./alarmConfig.json")
+	if err1 != nil {
+		log.Fatal(err1)
+		log.SetOutput(logFile1)
+		log.Println("Could not open alarmConfig.json")
+	}
+
+	fmt.Println(jsonContent)
 }
