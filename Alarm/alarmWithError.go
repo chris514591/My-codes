@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"strconv"
 	"time"
@@ -18,7 +19,10 @@ func main() {
 			alarmLENGTH = 10
 		}
 	default:
-		os.Exit(1)
+		_, err := os.OpenFile("myLOG.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 
 	var i int64 = 1
