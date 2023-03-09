@@ -6,3 +6,4 @@
 2023/03/09 14:39:48 Alarm error program initiated.
 2023/03/09 14:39:48 open ./alarmConfig___.json: The system cannot find the file specified.
 2023/03/09 14:57:23 Alarm error program initiated.
+2023/03/09 14:58:52 Alarm error program initiated.
