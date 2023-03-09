@@ -46,7 +46,7 @@ func main() {
 		myRand := RNG(MIN, MAX)
 		newChar := string(startChar[0] + byte(myRand))
 		fmt.Print(newChar)
-		// Print password
+		// Print password per generated character
 		if i == LENGTH {
 			break
 			// Keeps adding one until the default or given Length is reached
