@@ -13,7 +13,8 @@ func RNG(min, max int) int {
 	// Function generates random integers that belong to a given range using the rand.Intn(). Source: https://opensource.com/article/18/5/creating-random-secure-passwords-go
 }
 
-func generatorLoop(MIN int, MAX int, startChar string, i, LENGTH int64) {
+func generatorLoop(MIN int, MAX int, startChar string, LENGTH int64) {
+	var i int64 = 1
 	for {
 		myRand := RNG(MIN, MAX)
 		newChar := string(startChar[0] + byte(myRand))
@@ -55,9 +56,8 @@ func main() {
 	// Used to keep generating random integers for characters
 	startChar := "!"
 	// Starting at ! in the ASCII table to get usable characters
-	var i int64 = 1
 
-	generatorLoop(MIN, MAX, startChar, i, LENGTH)
+	generatorLoop(MIN, MAX, startChar, LENGTH)
 }
 
 // Next step will be to generate 3 passwords with 10 characters by default
