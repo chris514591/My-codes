@@ -59,3 +59,5 @@ func main() {
 
 	generatorLoop(MIN, MAX, startChar, i, LENGTH)
 }
+
+// Next step will be to generate 3 passwords with 10 characters by default
